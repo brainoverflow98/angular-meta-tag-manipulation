@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'Playground';
+export class AppComponent implements OnInit {
+  version = 0;
+
+  ngOnInit()
+  { 
+    setTimeout(()=>this.version = Math.random() ,200);
+  }
 }
